@@ -206,12 +206,6 @@ Object.defineProperty(exports, "fi", {
   get: function get() {
     return _index34.default;
   }
-Object.defineProperty(exports, "fil", {
-  enumerable: true,
-  get: function get() {
-    return _index94.default;
-  }
-});
 Object.defineProperty(exports, "fr", {
   enumerable: true,
   get: function get() {
@@ -564,6 +558,12 @@ Object.defineProperty(exports, "zhTW", {
   enumerable: true,
   get: function get() {
     return _index93.default;
+  }
+});
+Object.defineProperty(exports, "fil", {
+  enumerable: true,
+  get: function get() {
+    return _index94.default;
   }
 });
 

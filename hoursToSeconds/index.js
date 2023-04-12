@@ -1,0 +1,31 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = hoursToSeconds;
+
+var _index = require("../constants/index.js");
+
+/**
+ * @name hoursToSeconds
+ * @category Conversion Helpers
+ * @summary Convert hours to seconds.
+ *
+ * @description
+ * Convert a number of hours to a full number of seconds.
+ *
+ * @param hours - number of hours to be converted
+ *
+ * @returns the number of hours converted in seconds
+ *
+ * @example
+ * // Convert 2 hours to seconds:
+ * const result = hoursToSeconds(2)
+ * //=> 7200
+ */
+function hoursToSeconds(hours) {
+  return Math.floor(hours * _index.secondsInHour);
+}
+
+module.exports = exports.default;

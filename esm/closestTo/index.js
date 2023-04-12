@@ -1,0 +1,48 @@
+import constructFrom from "../constructFrom/index.js";
+import toDate from "../toDate/index.js";
+/**
+ * @name closestTo
+ * @category Common Helpers
+ * @summary Return a date from the array closest to the given date.
+ *
+ * @description
+ * Return a date from the array closest to the given date.
+ *
+ * @param dateToCompare - the date to compare with
+ * @param datesArray - the array to search
+ * @returns the date from the array closest to the given date or undefined if no valid value is given
+ *
+ * @example
+ * // Which date is closer to 6 September 2015: 1 January 2000 or 1 January 2030?
+ * const dateToCompare = new Date(2015, 8, 6)
+ * const result = closestTo(dateToCompare, [
+ *   new Date(2000, 0, 1),
+ *   new Date(2030, 0, 1)
+ * ])
+ * //=> Tue Jan 01 2030 00:00:00
+ */
+
+export default function closestTo(dirtyDateToCompare, datesArray) {
+  var dateToCompare = toDate(dirtyDateToCompare);
+  if (isNaN(Number(dateToCompare))) return constructFrom(dirtyDateToCompare, NaN);
+  var timeToCompare = dateToCompare.getTime();
+  var result;
+  var minDistance;
+  datesArray.forEach(function (dirtyDate) {
+    var currentDate = toDate(dirtyDate);
+
+    if (isNaN(Number(currentDate))) {
+      result = constructFrom(dirtyDateToCompare, NaN);
+      minDistance = NaN;
+      return;
+    }
+
+    var distance = Math.abs(timeToCompare - currentDate.getTime());
+
+    if (result == null || distance < minDistance) {
+      result = currentDate;
+      minDistance = distance;
+    }
+  });
+  return result;
+}

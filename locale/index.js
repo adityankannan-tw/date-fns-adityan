@@ -209,7 +209,7 @@ Object.defineProperty(exports, "fi", {
 Object.defineProperty(exports, "fil", {
   enumerable: true,
   get: function get() {
-    return _index34.default;
+    return _index94.default;
   }
 });
 Object.defineProperty(exports, "fr", {
@@ -752,5 +752,7 @@ var _index91 = _interopRequireDefault(require("./zh-CN/index.js"));
 var _index92 = _interopRequireDefault(require("./zh-HK/index.js"));
 
 var _index93 = _interopRequireDefault(require("./zh-TW/index.js"));
+
+var _index94 = _interopRequireDefault(require("./fil/index.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
